@@ -1,0 +1,58 @@
+# Japan Equity Research Agent - 設定ファイル
+# ※ シークレット値（APIキー・メールアドレス等）はここに書かず、環境変数で管理してください
+
+# ウォッチ銘柄リスト
+watchlist:
+  - name: 日立製作所
+    code: "6501"
+  - name: 東京エレクトロン
+    code: "8035"
+  - name: ディスコ
+    code: "6146"
+  - name: ローム
+    code: "6963"
+  - name: 信越化学工業
+    code: "4063"
+
+# RSSフィード
+rss_feeds:
+  - name: 日経電子版
+    url: https://www.nikkei.com/rss/
+  - name: ロイター日本語
+    url: https://feeds.reuters.com/reuters/JPBusinessNews
+  - name: Bloomberg Japan
+    url: https://feeds.bloomberg.co.jp/bloomberg/japan-news.rss
+  - name: EE Times Japan
+    url: https://eetimes.itmedia.co.jp/rss/eetj.rdf
+  - name: マイナビ半導体
+    url: https://news.mynavi.jp/techplus/rss/semiconductor/
+
+# Web検索トピック
+search_topics:
+  macro:
+    - "日本株 マクロ経済 見通し 最新"
+    - "日銀 金融政策 利上げ 円相場"
+    - "日経平均 TOPIXトレンド"
+    - "米国株 ダウ ナスダック 日本への影響"
+  geopolitical:
+    - "日米関係 貿易 最新ニュース"
+    - "中国 台湾 地政学リスク 半導体"
+    - "円ドル為替 地政学的要因"
+    - "輸出規制 日本企業 影響"
+  semiconductor:
+    - "半導体市場 需給 最新動向"
+    - "TSMC サムスン インテル 競争"
+    - "AI半導体 HBM 需要 日本企業"
+    - "半導体装置 日本メーカー 受注動向"
+
+# Gmail設定（実値は環境変数で管理）
+gmail:
+  sender: "${GMAIL_SENDER}"
+  recipient: "${GMAIL_RECIPIENT}"
+  # GMAIL_APP_PASSWORD は環境変数のみ
+
+# 出力設定
+output:
+  report_dir: ./output
+  max_items_per_feed: 10
+  max_web_results: 5
